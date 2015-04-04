@@ -12,7 +12,5 @@ $ wget http://getcomposer.org/composer.phar
 $ git clone https://github.com/sellsei/quickstart.git
 $ cd quickstart
 $ php ../composer.phar install
-$ php app/console assets:install
-$ php app/console fos:js-routing:dump
-$ php app/console assetic:dump
+$ php app/console sellsei:quickstart-install
 ```
