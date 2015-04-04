@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sellsei</title>
+{% stylesheets filter='cssrewrite' output='css/vendor.css'
+'vendor/bootstrap/dist/css/bootstrap.min.css'
+'vendor/fontawesome/css/font-awesome.min.css'
+%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% stylesheets filter='yui_css' output='css/app.css'
+'../app/Resources/public/css/app.css'
+%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+{% block stylesheets %}
+{% endblock %}
+    </head>
+    <body ng-app="app" ng-cloak class="ng-cloak" ng-controller="appCtrl">
+        {% block content %}
+        {% endblock content %}
+{% javascripts filter='yui_js' output='js/vendor.js'
+'vendor/angular/angular.min.js'
+'vendor/angular-route/angular-route.min.js'
+'vendor/jquery/dist/jquery.min.js'
+'vendor/bootstrap/dist/js/bootstrap.min.js'
+'bundles/fosjsrouting/js/router.js'
+'js/fos_js_routes.js'
+%}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% javascripts filter='yui_js' output='js/app.js'
+'../app/Resources/public/js/app.js'
+%}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% block javascripts %}
+{% endblock %}
+    </body>
+</html>
